@@ -22,7 +22,7 @@ export async function getWellnessEntries(limit: number = 30) {
     const { data, error } = await supabase
       .from('wellness_entries')
       .select('*')
-      .eq('user_id', userId)
+      .eq('clerk_id', userId)
       .order('entry_date', { ascending: false })
       .limit(limit);
 
@@ -52,7 +52,7 @@ export async function getWellnessEntryForDate(dateStr: string) {
     const { data, error } = await supabase
       .from('wellness_entries')
       .select('*')
-      .eq('user_id', userId)
+      .eq('clerk_id', userId)
       .eq('entry_date', dateStr)
       .maybeSingle();
 
@@ -89,7 +89,7 @@ export async function upsertWellnessEntry(input: WellnessInput) {
     const { data: existing, error: fetchErr } = await supabase
       .from('wellness_entries')
       .select('id')
-      .eq('user_id', userId)
+      .eq('clerk_id', userId)
       .eq('entry_date', parsed.data.entry_date)
       .maybeSingle();
 
@@ -123,7 +123,7 @@ export async function upsertWellnessEntry(input: WellnessInput) {
       const { data, error } = await supabase
         .from('wellness_entries')
         .insert({
-          user_id: userId,
+          clerk_id: userId,
           entry_date: parsed.data.entry_date,
           mood: parsed.data.mood,
           energy: parsed.data.energy,
@@ -169,7 +169,7 @@ export async function deleteWellnessEntry(id: string) {
       .from('wellness_entries')
       .select('id')
       .eq('id', id)
-      .eq('user_id', userId)
+      .eq('clerk_id', userId)
       .single();
 
     if (fetchErr || !existing) {

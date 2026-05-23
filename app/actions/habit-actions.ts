@@ -28,7 +28,7 @@ export async function createHabit(input: HabitInput) {
     const { data, error } = await supabase
       .from('habits')
       .insert({
-        user_id: userId,
+        clerk_id: userId,
         name: parsed.data.name,
         description: parsed.data.description,
         category: parsed.data.category,
@@ -71,7 +71,7 @@ export async function updateHabit(id: string, input: Partial<HabitInput>) {
       .from('habits')
       .select('id')
       .eq('id', id)
-      .eq('user_id', userId)
+      .eq('clerk_id', userId)
       .single();
 
     if (fetchErr || !existing) {
@@ -125,7 +125,7 @@ export async function deleteHabit(id: string) {
       .from('habits')
       .select('id')
       .eq('id', id)
-      .eq('user_id', userId)
+      .eq('clerk_id', userId)
       .single();
 
     if (fetchErr || !existing) {
@@ -185,7 +185,7 @@ export async function logHabit(input: HabitLogInput) {
       .from('habits')
       .select('id')
       .eq('id', parsed.data.habit_id)
-      .eq('user_id', userId)
+      .eq('clerk_id', userId)
       .single();
 
     if (habitErr || !habit) {
@@ -198,7 +198,7 @@ export async function logHabit(input: HabitLogInput) {
       .select('id')
       .eq('habit_id', parsed.data.habit_id)
       .eq('logged_date', parsed.data.logged_date)
-      .eq('user_id', userId)
+      .eq('clerk_id', userId)
       .maybeSingle();
 
     let resultError;
@@ -227,7 +227,7 @@ export async function logHabit(input: HabitLogInput) {
         .from('habit_logs')
         .insert({
           habit_id: parsed.data.habit_id,
-          user_id: userId,
+          clerk_id: userId,
           logged_date: parsed.data.logged_date,
           completed: parsed.data.completed,
           count: parsed.data.count,

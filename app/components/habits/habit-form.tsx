@@ -134,7 +134,7 @@ export default function HabitForm({ isOpen, onClose, onSubmit, initialData, titl
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-[#000]/60 backdrop-blur-sm transition-opacity" 
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" 
         onClick={onClose}
       />
 
@@ -142,7 +142,7 @@ export default function HabitForm({ isOpen, onClose, onSubmit, initialData, titl
       <div className="relative w-full max-w-lg bg-[#0e0e11] border border-[#27272a] rounded-2xl overflow-hidden shadow-2xl z-10 animate-in fade-in zoom-in duration-200">
         
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#1f1f23]">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-card-border">
           <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2">
             <Award className="w-5 h-5 text-brand-success" />
             {title}

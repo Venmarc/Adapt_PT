@@ -22,7 +22,7 @@ export async function getExercises() {
     const { data, error } = await supabase
       .from('exercises')
       .select('*')
-      .or(`user_id.is.null,user_id.eq.${userId}`)
+      .or(`clerk_id.is.null,clerk_id.eq.${userId}`)
       .order('name', { ascending: true });
 
     if (error) {
@@ -59,7 +59,7 @@ export async function createCustomExercise(name: string, category: string, muscl
         category,
         muscle_group: muscleGroups,
         is_custom: true,
-        user_id: userId,
+        clerk_id: userId,
       })
       .select()
       .single();
@@ -112,7 +112,7 @@ export async function saveWorkout(input: SaveWorkoutInput) {
         .from('workouts')
         .select('id')
         .eq('id', activeWorkoutId)
-        .eq('user_id', userId)
+        .eq('clerk_id', userId)
         .single();
 
       if (fetchErr || !existing) {
@@ -151,7 +151,7 @@ export async function saveWorkout(input: SaveWorkoutInput) {
       const { data: newWorkout, error: insertWorkoutErr } = await supabase
         .from('workouts')
         .insert({
-          user_id: userId,
+          clerk_id: userId,
           name,
           date,
           notes,
@@ -214,7 +214,7 @@ export async function deleteWorkout(workoutId: string) {
       .from('workouts')
       .select('id')
       .eq('id', workoutId)
-      .eq('user_id', userId)
+      .eq('clerk_id', userId)
       .single();
 
     if (fetchErr || !existing) {
@@ -279,7 +279,7 @@ export async function getWorkouts() {
           )
         )
       `)
-      .eq('user_id', userId)
+      .eq('clerk_id', userId)
       .order('date', { ascending: false })
       .order('created_at', { ascending: false });
 
@@ -311,7 +311,7 @@ export async function getLatestSetsForExercise(exerciseId: string) {
     const { data: workouts, error: wError } = await supabase
       .from('workouts')
       .select('id')
-      .eq('user_id', userId)
+      .eq('clerk_id', userId)
       .order('date', { ascending: false })
       .order('created_at', { ascending: false })
       .limit(10);

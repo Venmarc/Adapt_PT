@@ -319,12 +319,13 @@ export default async function DashboardPage() {
               <p className="text-xs font-semibold text-white">How are you feeling today?</p>
               <p className="text-[10px] text-[#a1a1aa] mt-0.5">Quickly track your daily sleep duration, energy level, and mood scores.</p>
             </div>
-            <button
-              className="py-1.5 px-3 bg-[#18181b] border border-[#27272a] hover:border-pink-500/20 hover:bg-pink-500/5 text-pink-400 text-xs font-semibold rounded-xl transition-all cursor-not-allowed opacity-50"
-              disabled
+            <Link
+              href="/wellness"
+              className="py-2 px-4 bg-[#121214] hover:bg-[#18181b] border border-[#27272a] hover:border-pink-500/25 text-pink-400 text-xs font-bold rounded-xl transition-all flex items-center gap-1"
             >
-              Logging Coming in Phase 1C
-            </button>
+              Log Wellness
+              <ChevronRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         )}
       </div>

@@ -24,7 +24,7 @@ export default async function FitnessPage() {
   const { data: exercises, error: exercisesError } = await supabase
     .from('exercises')
     .select('*')
-    .or(`user_id.is.null,user_id.eq.${userId}`)
+    .or(`clerk_id.is.null,clerk_id.eq.${userId}`)
     .order('name', { ascending: true });
 
   if (exercisesError) {
@@ -48,7 +48,7 @@ export default async function FitnessPage() {
         )
       )
     `)
-    .eq('user_id', userId)
+    .eq('clerk_id', userId)
     .order('date', { ascending: false })
     .order('created_at', { ascending: false });
 

@@ -27,12 +27,12 @@ export async function syncUserProfile(clerkData: ClerkWebhookUser) {
   const { error } = await serviceClient
     .from('profiles')
     .upsert({
-      id: clerkData.id,
+      clerk_id: clerkData.id,
       full_name: fullName,
       username,
       avatar_url: avatarUrl,
       updated_at: new Date().toISOString(),
-    }, { onConflict: 'id' });
+    }, { onConflict: 'clerk_id' });
 
   if (error) {
     console.error('Supabase profile sync error:', error);
@@ -58,7 +58,7 @@ export async function ensureProfile() {
   const { data: profile, error: fetchError } = await serviceClient
     .from('profiles')
     .select('id')
-    .eq('id', user.id)
+    .eq('clerk_id', user.id)
     .single();
 
   if (fetchError || !profile) {
@@ -74,12 +74,12 @@ export async function ensureProfile() {
     const { error: insertError } = await serviceClient
       .from('profiles')
       .upsert({
-        id: user.id,
+        clerk_id: user.id,
         full_name: fullName,
         username,
         avatar_url: avatarUrl,
         updated_at: new Date().toISOString(),
-      }, { onConflict: 'id' });
+      }, { onConflict: 'clerk_id' });
 
     if (insertError) {
       console.error('ensureProfile Supabase upsert error:', insertError);

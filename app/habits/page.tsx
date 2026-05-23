@@ -24,7 +24,7 @@ export default async function HabitsPage() {
   const { data: habits, error: habitsError } = await supabase
     .from('habits')
     .select('*')
-    .eq('user_id', userId)
+    .eq('clerk_id', userId)
     .order('created_at', { ascending: false });
 
   if (habitsError) {
@@ -39,7 +39,7 @@ export default async function HabitsPage() {
   const { data: logs, error: logsError } = await supabase
     .from('habit_logs')
     .select('*')
-    .eq('user_id', userId)
+    .eq('clerk_id', userId)
     .gte('logged_date', startOffsetStr);
 
   if (logsError) {
