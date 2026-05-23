@@ -1,6 +1,6 @@
 **PROJECT.md**
 
-**Project Name:** Ascend PT
+**Project Name:** Momentum
 
 **Tagline:** Your personal operating system for habits, fitness, and wellness that actually adapts to your life and shows you why you’re winning or failing.
 
@@ -44,7 +44,7 @@ Build a **production-grade**, beautiful, and genuinely useful habit + fitness + 
 - Key metrics at a glance: weekly completion %, streak heatmaps, net worth-style “Life Score”.
 
 **Analytics & Insights (this is what makes it non-trash)**
-- Correlation engine: “Low energy days correlate with <X protein” or “Missed workouts after <6hrs sleep”.
+- Correlation engine: “Low energy days correlate with <"X" protein” or “Missed workouts after <6hrs sleep”.
 - Trend charts (habits adherence, strength progression, mood averages).
 - Weekly/Monthly reports.
 - Goal projections and variance.
@@ -73,38 +73,17 @@ Every flow must feel fast and addictive. If logging takes more than 15-20 second
 - **Maintainability:** Clean architecture, good types, component library or consistent design tokens.
 - **Polish:** Error states, empty states, success toasts, confirmation dialogs — all thoughtful.
 
-### 6. Phases / Milestones (Build in this order)
+### 6. Development Phases
 
-**Phase 0: Foundation (1-2 days)**
-- Project setup, auth, DB schema, basic layout + navigation.
+See **PHASES.md** for detailed deliverables, timelines, success criteria, and warnings per phase.
 
-**Phase 1: Core Logging (1 week)**
-- Habits + basic logging.
-- Fitness basic logger.
-- Wellness quick logger.
-- Dashboard v1.
-
-**Phase 2: Data & Progress (1-1.5 weeks)**
-- History views.
-- Charts & visualizations.
-- Body measurements.
-
-**Phase 3: Insights & Polish (1-1.5 weeks)**
-- Correlation logic.
-- Reports.
-- PWA + offline.
-- Design system refinement.
-
-**Phase 4: Advanced + Stretch**
-- Templates, goal system with projections.
-- Export, settings, data management.
-- Demo seeding + public demo mode.
-
-**Phase 5: Battle Testing**
-- Use it yourself for 2+ weeks.
-- Fix friction ruthlessly.
-- Add tests where high value.
-- Deploy + domain.
+**High-level overview:**
+- Phase 0: Foundation (1-3 days)
+- Phase 1: Core Logging (5-8 days)
+- Phase 2: Progress & Visualization (7-10 days)
+- Phase 3: Insights, Polish & PWA (7-10 days)
+- Phase 4: Advanced Features & Demo Readiness (5-8 days)
+- Phase 5: Battle Testing & Launch (minimum 14 days of real usage)
 
 ### 7. Design & Feel Guidelines
 - Premium fitness app aesthetic: sharp, motivational but not bro-science.

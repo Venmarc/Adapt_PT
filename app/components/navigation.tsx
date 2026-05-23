@@ -23,7 +23,7 @@ export default function Navigation() {
         <div className="flex items-center h-16 px-6 border-b border-card-border">
           <span className="text-xl font-bold tracking-tight text-brand-success flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-brand-success animate-soft-pulse" />
-            ASCEND PT
+            MOMENTUM
           </span>
         </div>
 
@@ -65,7 +65,7 @@ export default function Navigation() {
       <header className="md:hidden fixed top-0 left-0 right-0 h-16 border-b border-card-border bg-card-dark flex items-center justify-between px-6 z-30">
         <span className="text-lg font-bold tracking-tight text-brand-success flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-brand-success animate-soft-pulse" />
-          ASCEND PT
+          MOMENTUM
         </span>
         <UserButton />
       </header>

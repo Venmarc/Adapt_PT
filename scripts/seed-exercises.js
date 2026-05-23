@@ -39,6 +39,10 @@ const exercisesToSeed = [
   { name: 'Lateral Raise', category: 'Push', muscle_group: ['Shoulders'], is_custom: false, user_id: null },
   { name: 'Cable Tricep Pushdown', category: 'Push', muscle_group: ['Triceps'], is_custom: false, user_id: null },
   { name: 'Dips', category: 'Push', muscle_group: ['Chest', 'Triceps', 'Shoulders'], is_custom: false, user_id: null },
+  { name: 'Pushups', category: 'Push', muscle_group: ['Chest', 'Triceps', 'Shoulders'], is_custom: false, user_id: null },
+  { name: 'Pike Pushups', category: 'Push', muscle_group: ['Shoulders', 'Triceps'], is_custom: false, user_id: null },
+  { name: 'Diamond Pushups', category: 'Push', muscle_group: ['Triceps', 'Chest'], is_custom: false, user_id: null },
+  { name: 'Decline Pushups', category: 'Push', muscle_group: ['Chest', 'Triceps', 'Shoulders'], is_custom: false, user_id: null },
 
   // Pull
   { name: 'Pull-up', category: 'Pull', muscle_group: ['Lats', 'Upper Back', 'Biceps'], is_custom: false, user_id: null },
@@ -47,6 +51,8 @@ const exercisesToSeed = [
   { name: 'Dumbbell Bicep Curl', category: 'Pull', muscle_group: ['Biceps'], is_custom: false, user_id: null },
   { name: 'Face Pull', category: 'Pull', muscle_group: ['Rear Delts', 'Upper Back'], is_custom: false, user_id: null },
   { name: 'Hammer Curl', category: 'Pull', muscle_group: ['Biceps', 'Forearms'], is_custom: false, user_id: null },
+  { name: 'Chin-up', category: 'Pull', muscle_group: ['Lats', 'Biceps'], is_custom: false, user_id: null },
+  { name: 'Inverted Row', category: 'Pull', muscle_group: ['Lats', 'Upper Back', 'Biceps'], is_custom: false, user_id: null },
 
   // Legs
   { name: 'Barbell Squat', category: 'Legs', muscle_group: ['Quads', 'Glutes', 'Hamstrings', 'Calves'], is_custom: false, user_id: null },
@@ -55,17 +61,28 @@ const exercisesToSeed = [
   { name: 'Leg Curl', category: 'Legs', muscle_group: ['Hamstrings'], is_custom: false, user_id: null },
   { name: 'Leg Extension', category: 'Legs', muscle_group: ['Quads'], is_custom: false, user_id: null },
   { name: 'Standing Calf Raise', category: 'Legs', muscle_group: ['Calves'], is_custom: false, user_id: null },
+  { name: 'Bodyweight Squat', category: 'Legs', muscle_group: ['Quads', 'Glutes'], is_custom: false, user_id: null },
+  { name: 'Walking Lunges', category: 'Legs', muscle_group: ['Quads', 'Glutes'], is_custom: false, user_id: null },
+  { name: 'Bulgarian Split Squat', category: 'Legs', muscle_group: ['Quads', 'Glutes'], is_custom: false, user_id: null },
+  { name: 'Glute Bridge', category: 'Legs', muscle_group: ['Glutes', 'Hamstrings'], is_custom: false, user_id: null },
+  { name: 'Donkey Kicks', category: 'Legs', muscle_group: ['Glutes'], is_custom: false, user_id: null },
 
   // Core
   { name: 'Plank', category: 'Core', muscle_group: ['Abs', 'Lower Back'], is_custom: false, user_id: null },
   { name: 'Hanging Leg Raise', category: 'Core', muscle_group: ['Abs'], is_custom: false, user_id: null },
   { name: 'Ab Wheel Rollout', category: 'Core', muscle_group: ['Abs'], is_custom: false, user_id: null },
+  { name: 'Bicycle Crunches', category: 'Core', muscle_group: ['Abs'], is_custom: false, user_id: null },
+  { name: 'Russian Twists', category: 'Core', muscle_group: ['Abs', 'Obliques'], is_custom: false, user_id: null },
+  { name: 'Lying Leg Raise', category: 'Core', muscle_group: ['Abs'], is_custom: false, user_id: null },
 
   // Cardio
   { name: 'Treadmill Run', category: 'Cardio', muscle_group: ['Cardiovascular System'], is_custom: false, user_id: null },
   { name: 'Stationary Cycling', category: 'Cardio', muscle_group: ['Cardiovascular System', 'Quads'], is_custom: false, user_id: null },
   { name: 'Rowing Machine', category: 'Cardio', muscle_group: ['Cardiovascular System', 'Full Body'], is_custom: false, user_id: null },
-  { name: 'Elliptical Trainer', category: 'Cardio', muscle_group: ['Cardiovascular System'], is_custom: false, user_id: null }
+  { name: 'Elliptical Trainer', category: 'Cardio', muscle_group: ['Cardiovascular System'], is_custom: false, user_id: null },
+  { name: 'Burpee', category: 'Cardio', muscle_group: ['Cardiovascular System', 'Full Body'], is_custom: false, user_id: null },
+  { name: 'Jumping Jacks', category: 'Cardio', muscle_group: ['Cardiovascular System'], is_custom: false, user_id: null },
+  { name: 'Mountain Climbers', category: 'Cardio', muscle_group: ['Cardiovascular System', 'Abs'], is_custom: false, user_id: null }
 ];
 
 async function seed() {

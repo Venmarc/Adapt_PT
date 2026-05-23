@@ -1,6 +1,6 @@
 ### **DECISIONS.md**
 
-**Architectural & Technology Decisions - AAscend PT**
+**Architectural & Technology Decisions - Momentum**
 
 **Core Stack**
 - **Frontend:** Next.js 16 (App Router) + TypeScript + Tailwind CSS + shadcn/ui

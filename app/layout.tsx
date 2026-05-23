@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Providers from "./components/providers";
 import Navigation from "./components/navigation";
+import ToastContainer from "./components/toast-container";
 import { ensureProfile } from "./actions/auth-actions";
 
 const geistSans = Geist({
@@ -17,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ascend PT",
+  title: "Momentum",
   description: "Personal operating system for habits, fitness, and wellness tracker",
 };
 
@@ -47,6 +48,8 @@ export default async function RootLayout({
                 {children}
               </main>
             </div>
+            
+            <ToastContainer />
           </Providers>
         </body>
       </html>
